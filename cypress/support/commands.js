@@ -12,6 +12,8 @@ Cypress.Commands.add("CheckLogin", (email, password) => {
             cy.get('[data-test="auth-email-input"]').type(email);
             cy.get('[data-test="auth-password-input"]').type(password);
             cy.get('[data-test="auth-submit-button"]').click();
+            cy.wait(1000);
+            cy.visit("/home");
             cy.get('[data-test="NavBarAdminDashboard"]', { timeout: 10000 }).should("be.visible");
         } else {
             cy.log("User is already logged in.");
