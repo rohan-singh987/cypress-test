@@ -2,10 +2,16 @@ name: End-to-end tests
 on: push
 jobs:
   cypress-run:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Create Cypress Fixture
+        run: |
+          mkdir -p cypress/fixtures
+          echo '{"email":"${{ secrets.CYPRESS_TEST_EMAIL }}","password":"${{ secrets.CYPRESS_TEST_PASSWORD }}"}' > cypress/fixtures/loginCredentials.json
+
       # Install npm dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress run
