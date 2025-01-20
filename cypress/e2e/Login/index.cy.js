@@ -36,8 +36,7 @@ describe("Login E2E test", () => {
     cy.get('[data-test="auth-submit-button"]').click();
     
     cy.visit("/home");
-    cy.get('button[type="button"] .MuiSvgIcon-root').click();
-    cy.get('[data-test="NavBarUserProfileDetailsComponent"]').should("be.visible");
+    cy.get('[data-test="NavBarAdminDashboard"]').should("be.visible");
   });
 });
 
