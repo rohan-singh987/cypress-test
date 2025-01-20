@@ -1,19 +1,22 @@
+let loginCredentials;
+
 const generateBotName = (() => {
     return () => `Test Bot ${Date.now()}`;
 })();
 const botName = generateBotName();
-let loginCredentials;
 
 const extractConv_Id = (url) => url.match(/\/conv\/([^/]+)/)[1];
 
 describe("Create a new bot from template", () => {
-    
-    beforeEach(() => {
+    before(() => {
+        // Load credentials before any tests run
         cy.fixture('loginCredentials').then((credentials) => {
             loginCredentials = credentials;
         });
-
-        cy.CheckLogin(loginCredentials.email, loginCredentials.password); // Call the custom login command
+    });
+    
+    beforeEach(() => {
+        cy.CheckLogin(loginCredentials.email, loginCredentials.password);
         cy.visit("/home");
     });
 

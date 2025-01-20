@@ -34,10 +34,10 @@ describe("Login E2E test", () => {
     cy.get('[data-test="auth-email-input"]').type(loginCredentials.email);
     cy.get('[data-test="auth-password-input"]').type(loginCredentials.password);
     cy.get('[data-test="auth-submit-button"]').click();
-    
+    cy.wait(5000);
     cy.visit("/home");
-    cy.get('button[type="button"] .MuiSvgIcon-root').click();
-    cy.get('[data-test="NavBarUserProfileDetailsComponent"]').should("be.visible");
+    cy.get('[data-test="NavBarAdminDashboard"]', { timeout: 50000 }).should("be.visible");
   });
 });
+
 

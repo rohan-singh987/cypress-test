@@ -1,13 +1,15 @@
 let loginCredentials;
 
 describe("Using Extract from Image to create a theme", () => {
-
-    beforeEach(() => {
+    before(() => {
+        // Load credentials before any tests run
         cy.fixture('loginCredentials').then((credentials) => {
             loginCredentials = credentials;
         });
+    });
 
-        cy.CheckLogin(loginCredentials.email, loginCredentials.password); // Call the custom login command
+    beforeEach(() => {
+        cy.CheckLogin(loginCredentials.email, loginCredentials.password);
         cy.visit("/conv/f8pEzp/#/build/make");
     });
 
