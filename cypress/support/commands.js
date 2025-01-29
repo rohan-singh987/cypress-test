@@ -34,7 +34,7 @@ Cypress.Commands.add("loginUser", (email, password) => {
 });
 
 // Bot Management
-Cypress.Commands.add("createNewBot", (botName) => {
+Cypress.Commands.add("createTextBotFromScratch", (botName) => {
     cy.get('a.ui.card').click();
     cy.get('button').contains('Create from scratch').click();
     cy.get('input[placeholder="Marketing Chatbot"]').type(botName);
@@ -44,5 +44,25 @@ Cypress.Commands.add("createNewBot", (botName) => {
 // Cleanup
 Cypress.Commands.add("deleteTestBot", (botName) => {
     // Add logic to delete the test bot
+});
+
+Cypress.Commands.add('selectBot', (botName) => {
+    // Add logic to select/click on the bot with the given name
+    cy.get('[data-test="bot-card"]')
+        .contains(botName)
+        .click();
+});
+
+Cypress.Commands.add('deleteBot', (botName) => {
+    // Add logic to delete the bot with the given name
+    cy.get('[data-test="bot-card"]')
+        .contains(botName)
+        .parent()
+        .find('[data-test="delete-bot-button"]') // Update selector based on your UI
+        .click();
+    
+    // Confirm deletion if there's a confirmation dialog
+    cy.get('[data-test="confirm-delete-button"]') // Update selector based on your UI
+        .click();
 });
   
