@@ -17,7 +17,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          spec: "cypress/e2e/Configure/**/*.cy.js"  # Only run tests in Configure folder
+          spec: "cypress/e2e/Login/**/*.cy.js"  # Only run tests in Configure folder
         continue-on-error: true  # Add this to continue even if tests fail
 
       - name: Upload Screenshots
