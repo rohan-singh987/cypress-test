@@ -27,5 +27,26 @@ describe("General Settings", () => {
     cy.deleteBot(botName);
   });
 
+  it("Toggle on TTS", () => {
+    cy.get('[data-test="ConfigureVoiceAudioSTT"]')
+      .find("input")
+			.should("have.attr", "type", "checkbox")
+			.check({ force: true });
+  });
+
+  it("Toggle on Text Streaming", () => {
+    cy.get('[data-test="ConfigureVoiceAudioTextStreaming"]')
+      .find("input")
+			.should("have.attr", "type", "checkbox")
+			.check({ force: true }); 
+  });
+
+  it("Toggle on STT", () => {
+    cy.get('[data-test="ConfigureVoiceAudioSTT"]')
+      .find("input")
+			.should("have.attr", "type", "checkbox")
+			.check({ force: true }); 
+  });
+
 
 });
