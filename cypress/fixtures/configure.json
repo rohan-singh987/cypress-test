@@ -1,0 +1,18 @@
+{
+    "seo": {
+      "title": "Cypress Test Bot",
+      "description": "This is a test bot for cypress",
+      "subdomain": "cypress-test-bot",
+      "image": "https://example.com/image.png",
+      "metaTitle": "Cypress Test Bot",
+      "favicon": "https://example.com/favicon.ico"
+    },
+    "email": {
+      "subject": "Welcome to Cypress Test Bot",
+      "emailID": "support@example.com"
+    },
+    "analytics": {
+      "GA4": "G-XXXXXXX"
+    }
+  }
+  
