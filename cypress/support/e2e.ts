@@ -1,5 +1,5 @@
 // ***********************************************************
-// This example support/e2e.js is processed and
+// This example support/e2e.ts is processed and
 // loaded automatically before your test files.
 //
 // This is a great place to put global configuration and
@@ -13,13 +13,17 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
-// Import commands.js using ES2015 syntax:
+// Import commands index which contains all command imports
 import "./commands/index"
 
-// Alternatively you can use CommonJS syntax:
-// require('./commands')
-Cypress.on('uncaught:exception', (err, runnable) => {
-    // Returning false prevents Cypress from failing the test
-    return false;
-  });
-  
+Cypress.on("uncaught:exception", (err, runnable) => {
+  // Returning false prevents Cypress from failing the test
+  return false
+})
+
+// Global beforeEach hook if needed
+// beforeEach(() => {
+//   // Clear cookies, localStorage etc if needed
+//   cy.clearCookies()
+//   cy.clearLocalStorage()
+// })
