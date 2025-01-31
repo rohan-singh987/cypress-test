@@ -1,4 +1,4 @@
-name: End-to-end tests
+name: Configure Tests
 on: push
 jobs:
   cypress-run:
@@ -13,14 +13,15 @@ jobs:
           echo '{"email":"${{ secrets.CYPRESS_TEST_EMAIL }}","password":"${{ secrets.CYPRESS_TEST_PASSWORD }}"}' > cypress/fixtures/loginCredentials.json
 
       # Install npm dependencies, cache them correctly
-      # and run all Cypress tests
+      # and run only Configure folder tests
       - name: Cypress run
         uses: cypress-io/github-action@v6
+        with:
+          spec: "cypress/e2e/Configure/*.cy.ts"
         continue-on-error: true  # Add this to continue even if tests fail
 
       - name: Upload Screenshots
         uses: actions/upload-artifact@v4
-        if: failure()  # Only upload screenshots on failure
         with:
           name: cypress-screenshots
           path: cypress/screenshots

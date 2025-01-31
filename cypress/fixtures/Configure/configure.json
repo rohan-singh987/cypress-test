@@ -1,0 +1,45 @@
+{
+  "sidebarMenuItems": {
+    "menuItems": [
+      "General Settings",
+      "SEO Settings",
+      "Email Settings",
+      "Voice & Audio",
+      "Goal & Tracking"
+    ]
+  },
+  "general": {
+    "description": "Update the title, subdomain and language of your chatbot.",
+    "titleDefault": "",
+    "descriptionDefault": "",
+    "subdomainDefault": "",
+    "titleInput": "Cypress Test Bot",
+    "descriptionInput": "This is a test bot for cypress",
+    "subdomainInput": "cypress-test-bot"
+  },
+  "seo": {
+    "metaTitle": "Meta Information",
+    "metaDescription": "Update your chatbot's meta title and image. Meta title reflects in your SEO, social media thumbnail, and the browser's tab.",
+    "faviconTitle": "Favicon",
+    "faviconDescription": "Update your chatbot's favicon.",
+    "chatbotDescriptionTitle": "Chatbot Description",
+    "chatbotDescriptionDescription": "Update your chatbot's industry, use-case and description.",
+    "metaTitleInput": "Cypress Test Bot",
+    "metaImageLinkInput": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+    "IndustryInputKey": "ai-agents-industry",
+    "IndustryInputValue": "🦾 AI Agents",
+    "UseCaseInputKey": "ai-agents",
+    "UseCaseInputValue": "🦾 AI Agents",
+    "ChatbotDescriptionInput": "This is a test chatbot for cypress"
+  },
+  "email": {
+    "emailSettingsTitle": "Email Notification",
+    "emailSettingsDescription": "Configure email triggers, update the email subject and add recipients.",
+    "subjectDefault": "Someone Filled:",
+    "subjectInput": "Welcome to Cypress Test Bot",
+    "emailIDInput": "support@example.com"
+  },
+  "analytics": {
+    "GA4": "G-XXXXXXX"
+  }
+}
