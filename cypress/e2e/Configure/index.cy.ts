@@ -61,14 +61,18 @@ before(() => {
 })
 
 beforeEach(() => {
-  // Ensure user is logged in before each test
-  cy.ensureIfUserIsLoggedIn(
-    loginCredentials.validUser.email,
-    loginCredentials.validUser.password
-  )
-
-  // Navigate to the bot we created to select the existing bot
-  cy.selectTestBot(TestChatbotName)
+  cy.url().then((currentUrl) => {
+    if (!currentUrl.includes("/home")) {
+      cy.ensureIfUserIsLoggedIn(
+        loginCredentials.validUser.email,
+        loginCredentials.validUser.password
+      )
+      cy.selectTestBot(TestChatbotName)
+      cy.get(
+        '[data-test="ExpandedNavBarChatbotDashboardConfigureNavComponentInactive"]'
+      ).click()
+    }
+  })
 })
 
 after(() => {
